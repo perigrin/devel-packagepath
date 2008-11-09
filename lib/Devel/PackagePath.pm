@@ -21,7 +21,8 @@ has directory => (
     lazy_build => 1,
     handles    => {
         create => 'mkpath',
-        remove => 'rmtree' path => 'stringify',
+        remove => 'rmtree',
+        path   => 'stringify',
     },
 );
 
