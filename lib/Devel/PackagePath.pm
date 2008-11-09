@@ -1,5 +1,6 @@
 package Devel::PackagePath;
 use Squirrel;
+our $VERSION = 0.01;
 use MooseX::Types::Path::Class qw(Dir);
 
 has package => (
@@ -30,7 +31,6 @@ sub _build_directory {
     pop @pkg_list;    # pop off the file name
     Path::Class::Dir->new( $_[0]->base, @pkg_list[ 0 .. $#pkg_list ] );
 }
-
 
 no Squirrel;
 1;

@@ -2,8 +2,8 @@
 use inc::Module::Install;
 
 # Define metadata
-name 'Devel-GeneratePackagePath';
-all_from 'lib/Devel/GeneratePackagePath.pm';
+name 'Devel-PackagePath';
+all_from 'lib/Devel/PackagePath.pm';
 
 # Specific dependencies
 requires 'Mouse'                      => '0.10';
