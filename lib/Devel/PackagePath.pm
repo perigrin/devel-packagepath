@@ -51,7 +51,6 @@ This document describes Devel::PackagePath version 0.0.1
 
     my $path = Devel::PackagePath->new( package => 'MyApp::Base::Object', base => 'lib');
     $path->create; # creates lib/MyApp/Base
-    $path->remove; # remove lib/MyApp/Base
     
 =head1 DESCRIPTION
 
