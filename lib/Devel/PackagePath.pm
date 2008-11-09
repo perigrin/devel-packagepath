@@ -21,7 +21,6 @@ has directory => (
     lazy_build => 1,
     handles    => {
         create => 'mkpath',
-        remove => 'rmtree',
         path   => 'stringify',
     },
 );
@@ -31,6 +30,7 @@ sub _build_directory {
     pop @pkg_list;    # pop off the file name
     Path::Class::Dir->new( $_[0]->base, @pkg_list[ 0 .. $#pkg_list ] );
 }
+
 
 no Moose;
 1;
@@ -80,10 +80,6 @@ A base directory, defaults to '.'.
 =item create
 
 Create the path on the filesystem.
-
-=item remove
-
-Remove the path from the filesystem.
 
 =item path
 
