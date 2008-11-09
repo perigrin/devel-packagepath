@@ -1,5 +1,5 @@
 package Devel::PackagePath;
-use Moose;
+use Squirrel;
 use MooseX::Types::Path::Class qw(Dir);
 
 has package => (
@@ -32,7 +32,7 @@ sub _build_directory {
 }
 
 
-no Moose;
+no Squirrel;
 1;
 __END__
 
@@ -93,7 +93,7 @@ Devel::PackagePath requires no configuration files or environment variables.
 
 =head1 DEPENDENCIES
 
-Moose, MooseX::Types::Path::Class
+Squirrel, MooseX::Types::Path::Class
 
 =head1 INCOMPATIBILITIES
 
