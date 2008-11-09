@@ -6,7 +6,6 @@ extends qw(Devel::GeneratePackagePath);
 with qw(MooseX::Getopt);
 
 sub run {
-    my ($cmd) = ( @{ $_[0]->extra_argv }, 'get_path' );
-    print $_[0]->$cmd;
+    print $_[0]->create;
 }
 __PACKAGE__->new_with_options->run;
