@@ -6,8 +6,8 @@ name 'Devel-PackagePath';
 all_from 'lib/Devel/PackagePath.pm';
 
 # Specific dependencies
-requires 'Mouse'                      => '0.10';
-requires 'MooseX::Types::Path::Class' => undef;
+requires 'Moose'                      => '0.64';
+requires 'MooseX::Types::Path::Class' => '0.04';
 
 build_requires 'Test::More' => '0.42';
 

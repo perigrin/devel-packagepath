@@ -1,5 +1,5 @@
 package Devel::PackagePath;
-use Squirrel;
+use Moose;
 our $VERSION = 0.01;
 use MooseX::Types::Path::Class qw(Dir);
 
@@ -29,10 +29,20 @@ has directory => (
 sub _build_directory {
     my @pkg_list = split '::', $_[0]->package;
     pop @pkg_list;    # pop off the file name
-    Path::Class::Dir->new( $_[0]->base, @pkg_list[ 0 .. $#pkg_list ] );
+    Path::Class::Dir->new( $_[0]->base, @pkg_list );
 }
 
-no Squirrel;
+has file_name => (
+    isa        => 'Str',
+    is         => 'ro',
+    lazy_build => 1,
+);
+
+sub _build_file_name {
+    return ( split '::', $_[0]->package )[-1] . '.pm';
+}
+
+no Moose;
 1;
 __END__
 
